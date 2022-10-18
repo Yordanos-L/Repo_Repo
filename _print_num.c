@@ -7,7 +7,7 @@
  * @g: pointer
  * Return: void
  */
-void _print_num(int y, int (*f)(long int), int *b, int *g)
+void _print_num(long int y, int (*f)(long int), int *b, int *g)
 {
 	*(b) = *(b) + f(y);
 	*(g) = (*g) + 1;

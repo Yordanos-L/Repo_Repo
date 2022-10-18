@@ -8,7 +8,7 @@
  * @c: int
  * Return: void
  */
-void _print(int *l, int *n, int *s, int i, int c)
+void _print(int *l, int *n, int *s, int i, long int c)
 {
 	int j;
 

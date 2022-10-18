@@ -14,6 +14,8 @@ int _printf(const char *format, ...)
 
 	int s = 0;
 
+	long int t;
+
 	va_start(ap, format);
 	for (i = 0; format[i] != '\0'; i++)
 	{
@@ -27,7 +29,8 @@ int _printf(const char *format, ...)
 				i++;
 				break;
 			case 3:
-				_print_num(va_arg(ap, long int), _print_number, &s, &i);
+				t = positive(va_arg(ap, long int));
+				_print_num(t, _print_number, &s, &i);
 				break;
 			case 4:
 				write(1, &spec[2], 1);
@@ -41,4 +44,15 @@ int _printf(const char *format, ...)
 	}
 	va_end(ap);
 	return (s);
+}
+long int positive(long int h)
+{
+	long int y;
+
+	if (h < 0)
+	{
+		y = h * -1;
+		return (y);
+	}
+	return (h);
 }
